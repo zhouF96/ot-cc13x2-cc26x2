@@ -126,6 +126,7 @@ SECTIONS
     ._user_heap_stack :
     {
       . = ALIGN(4);
+      end = .;
       . = . + _Min_Heap_Size;
       . = . + _Min_Stack_Size;
       . = ALIGN(4);

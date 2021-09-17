@@ -37,7 +37,8 @@
 #include <stdint.h>
 #include "rf_patch_mce_genook.h"
 #include <ti/devices/DeviceFamily.h>
-#include DeviceFamily_constructPath(inc/hw_types.h)
+//#include DeviceFamily_constructPath(inc/hw_types.h)
+#include "../inc/hw_types.h"
 
 #ifndef MCE_PATCH_TYPE
 #define MCE_PATCH_TYPE static const uint32_t

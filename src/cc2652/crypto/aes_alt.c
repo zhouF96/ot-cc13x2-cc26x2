@@ -62,7 +62,7 @@ void mbedtls_aes_init(mbedtls_aes_context *ctx)
          * the peripheral power domain use this code to repower it
 
         PRCMPowerDomainOn(PRCM_DOMAIN_PERIPH);
-        while (PRCMPowerDomainStatus(PRCM_DOMAIN_PERIPH) != PRCM_DOMAIN_POWER_ON);
+        while (PRCMPowerDomainsAllOn(PRCM_DOMAIN_PERIPH) != PRCM_DOMAIN_POWER_ON);
         */
         PRCMPeripheralRunEnable(PRCM_PERIPH_CRYPTO);
         PRCMPeripheralSleepEnable(PRCM_PERIPH_CRYPTO);
@@ -97,7 +97,7 @@ void mbedtls_aes_free(mbedtls_aes_context *ctx)
          * powered off, use this code to do so.
 
         PRCMPowerDomainOff(PRCM_DOMAIN_PERIPH);
-        while (PRCMPowerDomainStatus(PRCM_DOMAIN_PERIPH) != PRCM_DOMAIN_POWER_OFF);
+        while (PRCMPowerDomainsAllOn(PRCM_DOMAIN_PERIPH) != PRCM_DOMAIN_POWER_OFF);
         */
         PRCMPeripheralRunDisable(PRCM_PERIPH_CRYPTO);
         PRCMPeripheralSleepDisable(PRCM_PERIPH_CRYPTO);

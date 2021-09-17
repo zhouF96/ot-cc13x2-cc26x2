@@ -831,7 +831,7 @@ static uint_fast8_t rfCorePowerOn(void)
     /* Enable RF Core power domain */
     PRCMPowerDomainOn(PRCM_DOMAIN_RFCORE);
 
-    while (PRCMPowerDomainStatus(PRCM_DOMAIN_RFCORE) != PRCM_DOMAIN_POWER_ON)
+    while (PRCMPowerDomainsAllOn(PRCM_DOMAIN_RFCORE) != PRCM_DOMAIN_POWER_ON)
         ;
 
     PRCMDomainEnable(PRCM_DOMAIN_RFCORE);
@@ -878,7 +878,7 @@ static void rfCorePowerOff(void)
 
     PRCMPowerDomainOff(PRCM_DOMAIN_RFCORE);
 
-    while (PRCMPowerDomainStatus(PRCM_DOMAIN_RFCORE) != PRCM_DOMAIN_POWER_OFF)
+    while (PRCMPowerDomainsAllOn(PRCM_DOMAIN_RFCORE) != PRCM_DOMAIN_POWER_OFF)
         ;
 
     if (OSCClockSourceGet(OSC_SRC_CLK_HF) != OSC_RCOSC_HF)

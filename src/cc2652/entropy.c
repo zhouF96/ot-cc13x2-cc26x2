@@ -62,7 +62,7 @@ void cc2652RandomInit(void)
 {
     PRCMPowerDomainOn(PRCM_DOMAIN_PERIPH);
 
-    while (PRCMPowerDomainStatus(PRCM_DOMAIN_PERIPH) != PRCM_DOMAIN_POWER_ON)
+    while (PRCMPowerDomainsAllOn(PRCM_DOMAIN_PERIPH) != PRCM_DOMAIN_POWER_ON)
         ;
 
     PRCMPeripheralRunEnable(PRCM_PERIPH_TRNG);

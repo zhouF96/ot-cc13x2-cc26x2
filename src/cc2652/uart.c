@@ -84,7 +84,7 @@ static void uart_power_control(uint32_t who_base, int turnon)
         value = (who_base == UART0_BASE) ? PRCM_DOMAIN_SERIAL : PRCM_DOMAIN_PERIPH;
         PRCMPowerDomainOn(value);
 
-        while (PRCMPowerDomainStatus(value) != PRCM_DOMAIN_POWER_ON)
+        while (PRCMPowerDomainsAllOn(value) != PRCM_DOMAIN_POWER_ON)
             ;
 
         value = (who_base == UART0_BASE) ? PRCM_PERIPH_UART0 : PRCM_PERIPH_UART1;

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "hw_adi.h": "c",
+        "hw_prcm.h": "c",
+        "hw_types.h": "c"
+    }
+}

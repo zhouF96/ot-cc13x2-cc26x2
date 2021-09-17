@@ -38,7 +38,7 @@
 #include <stdint.h>
 #include "rf_patch_rfe_genook.h"
 #include <ti/devices/DeviceFamily.h>
-#include DeviceFamily_constructPath(inc/hw_types.h)
+#include "../inc/hw_types.h"
 
 #ifndef RFE_PATCH_TYPE
 #define RFE_PATCH_TYPE static const uint32_t

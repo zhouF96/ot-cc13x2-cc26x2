@@ -72,5 +72,6 @@ target_compile_options(openthread-cc1352
 target_include_directories(openthread-cc1352
     PRIVATE
         ${OT_PUBLIC_INCLUDES}
+        #${PROJECT_SOURCE_DIR}/third_party
         ${PROJECT_SOURCE_DIR}/openthread/examples/platforms
 )

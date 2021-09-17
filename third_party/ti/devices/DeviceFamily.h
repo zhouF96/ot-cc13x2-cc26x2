@@ -50,6 +50,7 @@
 extern "C" {
 #endif
 
+#define DeviceFamily_CC13X2_CC26X2
 /*
  * DeviceFamily_ID_XYZ values.
  *

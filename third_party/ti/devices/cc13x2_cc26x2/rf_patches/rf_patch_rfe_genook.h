@@ -40,7 +40,7 @@
 
 #include <stdint.h>
 #include <ti/devices/DeviceFamily.h>
-#include DeviceFamily_constructPath(inc/hw_types.h)
+#include "../inc/hw_types.h"
 
 extern void rf_patch_rfe_genook(void);
 
